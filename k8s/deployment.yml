@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: "gomain"
+  labels:
+    app: "gomain"
+
+spec:
+  selector:
+    matchLabels:
+      app: gomain
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: "gomain"
+
+    spec:
+      containers:
+        - name: gomain
+          image: danielrodriguess/k8s-go:v3
